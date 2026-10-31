@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Latihan DOM: daftar tugas dan formulir pendaftaran workshop.">
+  <title>Latihan 6 — Daftar Tugas dan Workshop</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <main class="container">
+    <header class="page-header">
+      <p class="eyebrow">Latihan 6 · Pemrograman Web</p>
+      <h1>Daftar Tugas Sederhana</h1>
+      <p class="intro">Catat tugas, tandai yang selesai, lalu lanjutkan belajar membuat halaman web interaktif.</p>
+    </header>
+
+    <section class="card todo-section" aria-labelledby="judulTugas">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">Latihan DOM</p>
+          <h2 id="judulTugas">Daftar Tugas</h2>
+        </div>
+        <span id="jumlahTugas" class="task-count" aria-live="polite">0 tugas</span>
+      </div>
+
+      <form id="formTugas" class="todo-form">
+        <div class="field">
+          <label for="inputTugas">Tugas baru</label>
+          <input id="inputTugas" name="tugas" type="text" maxlength="120" placeholder="Contoh: Belajar dasar DOM">
+        </div>
+        <button id="tambahTugas" class="primary" type="submit">Tambah tugas</button>
+      </form>
+      <p id="pesanTugas" class="feedback" aria-live="polite"></p>
+      <ul id="daftarTugas" class="task-list" aria-label="Daftar tugas"></ul>
+    </section>
+
+    <section class="card workshop-section" aria-labelledby="judulWorkshop">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">Mini Project</p>
+          <h2 id="judulWorkshop">Pendaftaran Workshop Web</h2>
+        </div>
+      </div>
+
+      <button id="tombolInfo" type="button" class="text-button" aria-expanded="true" aria-controls="infoWorkshop">
+        Sembunyikan info
+      </button>
+      <p id="infoWorkshop" class="info">
+        Workshop berlangsung satu hari penuh. Peserta membawa laptop sendiri dan akan membangun halaman web interaktif dari nol.
+      </p>
+
+      <form id="formDaftar" novalidate>
+        <div class="field">
+          <label for="nama">Nama lengkap</label>
+          <input id="nama" name="nama" type="text" autocomplete="name" required>
+          <p class="error" id="errNama" aria-live="polite"></p>
+        </div>
+
+        <div class="field">
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" autocomplete="email" required>
+          <p class="error" id="errEmail" aria-live="polite"></p>
+        </div>
+
+        <div class="field">
+          <label for="sesi">Sesi workshop</label>
+          <select id="sesi" name="sesi" required>
+            <option value="">-- Pilih sesi --</option>
+            <option value="Pagi (09.00-12.00)">Pagi (09.00-12.00)</option>
+            <option value="Siang (13.00-16.00)">Siang (13.00-16.00)</option>
+            <option value="Malam (19.00-21.00)">Malam (19.00-21.00)</option>
+          </select>
+          <p id="infoSesi" class="hint" aria-live="polite"></p>
+          <p class="error" id="errSesi" aria-live="polite"></p>
+        </div>
+
+        <div class="field">
+          <label for="catatan">Harapan Anda (opsional)</label>
+          <textarea id="catatan" name="catatan" rows="3" maxlength="120"></textarea>
+          <p class="hint"><span id="hitungKarakter">0</span>/120 karakter</p>
+        </div>
+
+        <div class="actions">
+          <button type="submit" class="primary">Daftar</button>
+          <button type="reset" class="secondary">Hapus isian</button>
+        </div>
+
+        <p id="pesanSukses" class="success" aria-live="polite"></p>
+      </form>
+
+      <section class="summary" aria-live="polite" aria-labelledby="judulRingkasan">
+        <h3 id="judulRingkasan">Ringkasan pendaftaran</h3>
+        <dl>
+          <div class="summary-row">
+            <dt>Nama</dt>
+            <dd id="rNama">-</dd>
+          </div>
+          <div class="summary-row">
+            <dt>Email</dt>
+            <dd id="rEmail">-</dd>
+          </div>
+          <div class="summary-row">
+            <dt>Sesi</dt>
+            <dd id="rSesi">-</dd>
+          </div>
+        </dl>
+      </section>
+    </section>
+  </main>
