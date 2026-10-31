@@ -1,5 +1,6 @@
 # Lab6Web - Praktikum Pemrograman Web Pertemuan 7
 
+PAHMI DWIKA FAHLEVI/312510389/ I253C
 ## Tujuan
 Memahami DOM, event handling dengan `addEventListener()`, serta validasi form menggunakan JavaScript.
 
